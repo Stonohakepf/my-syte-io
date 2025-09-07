@@ -1,0 +1,430 @@
+/* ===== БАЗА ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #161618;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+/* ===== ШАПКА ===== */
+header {
+  background-color: #161618;
+  padding: 8px 0;
+  border-bottom: 1px solid #1f1f1f;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 120px;
+  gap: 16px;
+}
+
+.logo img {
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ===== НАВІГАЦІЯ ===== */
+nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+nav ul li:first-child a::after,
+nav ul li:nth-child(6) a::after {
+  content: "›";
+  font-size: 11px;
+  margin-left: 6px;
+  color: #b3b3b3;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  transform: rotate(90deg); 
+nav ul li:first-child a:hover::after,
+nav ul li:nth-child(6) a:hover::after {
+  color: #fff;
+}
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: 500;
+  font-size: 13px;
+  transition: color 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+nav ul li:nth-child(1) a,
+nav ul li:nth-child(6) a {
+  padding: 6px 14px;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  background-color: #1f1f1f;
+}
+
+/* ===== КНОПКИ ===== */
+.auth-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.login {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  transition: color 0.3s ease;
+}
+
+.login:hover {
+  color: #fff;
+}
+
+.signup {
+  background-color: #4F46E5;
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.signup:hover {
+  background-color: #4338CA;
+}
+
+/* ===== ГАМБУРГЕР ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 26px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ===== ХРЕСТИК ===== */
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ===== ГОЛОВНИЙ БЛОК ===== */
+.intro {
+  margin-top: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.intro h1 {
+  margin-top: 80px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: center;
+  background: linear-gradient(180deg, #FF9466 0%, #FF4D00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.6px;
+}
+
+.asks-logo {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asks-logo img {
+  width: 180px;
+  height: 180px;
+  filter: drop-shadow(20px -10px 40px rgba(255, 148, 102, 0.8))  
+          drop-shadow(-20px 20px 60px rgba(79, 70, 229, 0.7));   
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 120px;
+  background: linear-gradient(180deg, #FF9466 0%, #FF4D00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.6px;
+}
+
+.description-wrapper {
+  width: 701px;
+  height: 56px;
+  margin: 0 auto 121px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #b3b3b3;
+  text-align: center;
+  transform: scale(0.95);
+}
+
+/* ===== ВІДЕО ===== */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  gap: 24px;
+}
+
+.video-container {
+  position: relative;
+  width: 1200px;
+  height: 675px;
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.video-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #000;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+  background-color: #f0f0f0;
+}
+
+.video-text {
+  text-align: center;
+  max-width: none;
+  margin-top: 87px;
+}
+
+.video-text h2 {
+  width: 503px;
+  height: 104px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.video-text p {
+  width: 531px;
+  height: 74px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #b3b3b3;
+  line-height: 1.5;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1024px) {
+  .header-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 20px; 
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    background-color: #161618;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding-top: 60px;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  nav.active .close-btn {
+    display: block;
+  }
+}
+
+/* ===== МОБІЛЬНА АДАПТАЦІЯ ===== */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .logo img {
+    height: 16px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .intro {
+    margin-top: 120px;
+    padding: 0 12px;
+  }
+
+  .asks-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .asks-logo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .intro h1 {
+    font-size: 14px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .description-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 40px auto;
+    padding: 0 8px;
+  }
+
+  .description {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .video-container {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .video-preview {
+    border-radius: 12px;
+  }
+
+  .play-button {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .video-text {
+    margin-top: 40px;
+    padding: 0 12px;
+  }
+
+  .video-text h2 {
+    width: 100%;
+    font-size: 18px;
+    line-height: 1.4;
+    height: auto;
+  }
+
+  .video-text p {
+    width: 100%;
+    font-size: 13px;
+    line-height: 1.4;
+    height: auto;
+    margin: 0 auto;
+  }
+}
